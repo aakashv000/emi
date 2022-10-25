@@ -1,0 +1,116 @@
+{
+    "POLICY_PARAMS": {
+        "ALL_TENURES": [
+            6,
+            12,
+            18
+        ],
+        "MAX_AMOUNT_TENURE": {
+            "6": 45000,
+            "12": 75000,
+            "18": 300000
+        },
+        "MIN_AMOUNT_TENURE": {
+            "6": 25000,
+            "12": 25000,
+            "18": 30000
+        },
+        "MAX_EMI_BASED_ON_LEVERAGE_ATTRIBUTE_A_TENURE": {
+            "TENURE": [
+                6,
+                12,
+                18
+            ],
+            "LEVERAGE_ATTRIBUTE_A_BUCKET": [
+                0,
+                20000,
+                30000,
+                40000,
+                50000
+            ],
+            "VALUES": [
+                [
+                    2500,
+                    3000,
+                    4000,
+                    5000,
+                    6000
+                ],
+                [
+                    0,
+                    4500,
+                    6000,
+                    7500,
+                    9000
+                ],
+                [
+                    0,
+                    4500,
+                    6000,
+                    7500,
+                    9000
+                ]
+            ]
+        }
+    },
+    "DECISIONING": {
+        "REJECT_NEGATIVE_TRIGGER_1": true,
+        "MINIMUM_LEVERAGE_ATTRIBUTE_A": 18000
+    },
+    "OFFERS": {
+        "PAYMENT_ABILITY_2_MULTIPLIER": {
+            "USER_RISK_ATTRIBUTE_1": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "VALUES": [
+                0.7,
+                0.8,
+                0.8,
+                0.5
+            ]
+        },
+        "PAYMENT_ABILITY_1_MULTIPLIER": {
+            "PAYMENT_ABILITY_1_BUCKET": [
+                0,
+                5000,
+                10000,
+                15000
+            ],
+            "VALUES": [
+                0.5,
+                0.6,
+                0.7,
+                0.8
+            ]
+        },
+        "LENDING_RATE": {
+            "USER_ATTRIBUTE_2": [
+                "A",
+                "B"
+            ],
+            "USER_RISK_ATTRIBUTE_2": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "VALUES": [
+                [
+                    25,
+                    26,
+                    27,
+                    28
+                ],
+                [
+                    28,
+                    29,
+                    30,
+                    31
+                ]
+            ]
+        }
+    }
+}

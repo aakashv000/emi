@@ -1,0 +1,12 @@
+{
+    "paymentAbility1": 23415.0,
+    "paymentAbility2": 5470.0,
+    "userRiskAttribute1": 2,
+    "userRiskAttribute2":7,
+    "obligationAttribute1": 2341.0,
+    "leverageAttributeA": 30000.0,
+    "userAttribute1": 35.0,
+    "userAttribute2": "A",
+    "userAttribute3": 3.71,
+    "negativeTrigger1": false
+}
