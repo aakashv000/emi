@@ -7,6 +7,12 @@ import java.nio.file.Paths;
 import java.util.Objects;
 
 public class ReadWrite {
+    /**
+     * Read file to String
+     *
+     * @param filePath
+     * @return
+     */
     public static String readFile(String filePath) {
         String fileContent = null;
 

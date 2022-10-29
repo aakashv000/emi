@@ -1,6 +1,5 @@
 package org.example.structures;
 
-import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 
 public class Config {

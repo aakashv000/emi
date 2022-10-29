@@ -3,6 +3,7 @@ package org.example.structures;
 import com.google.gson.annotations.SerializedName;
 
 public class Offers {
+    // TODO: confirm that max of emi from PA1 and PA2 is taken
     @SerializedName("PAYMENT_ABILITY_2_MULTIPLIER")
     private PaymentAbility2Multiplier paymentAbility2Multiplier;
     @SerializedName("PAYMENT_ABILITY_1_MULTIPLIER")

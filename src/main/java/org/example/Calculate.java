@@ -2,13 +2,13 @@ package org.example;
 
 import org.example.structures.LendingRate;
 import org.example.structures.Offers;
+import org.example.structures.Result;
 import org.example.structures.User;
 import org.example.utils.ArrayUtil;
-
-import java.util.Arrays;
+import java.util.Map;
 
 public class Calculate {
-    public float calculateEmi (User user, Offers offers) {
+    public Result calculateEmi (User user, Offers offers, Result result) {
         // for paymentAbility1
         float paymentAbility1 = user.getPaymentAbility1();
 
@@ -33,16 +33,20 @@ public class Calculate {
 
         // finalize emi
         if (emi1 >= emi2) {
-            System.out.println(String.format("EMI = %f, is decided from paymentAbility1, since EMI from PA1 (%f) >= EMI from PA2 (%f)",emi1, emi1, emi2));
-            return emi1;
+            result.setEmiSelectedPAMap(Map.of(emi1, String.format("paymentAbility1 (since, EMI from PA1 (%f) >= EMI from PA2 (%f))", emi1, emi2)));
+
+//            System.out.println(String.format("EMI = %f, is decided from paymentAbility1, since EMI from PA1 (%f) >= EMI from PA2 (%f)",emi1, emi1, emi2));
         }
         else {
-            System.out.println(String.format("EMI = %f, is decided from paymentAbility2, since EMI from PA1 (%f) < EMI from PA2 (%f)",emi2, emi1, emi2));
-            return emi2;
+            result.setEmiSelectedPAMap(Map.of(emi2, String.format("paymentAbility2 (since, EMI from PA1 (%f) < EMI from PA2 (%f))", emi1, emi2)));
+
+//            System.out.println(String.format("EMI = %f, is decided from paymentAbility2, since EMI from PA1 (%f) < EMI from PA2 (%f)",emi2, emi1, emi2));
         }
+
+        return result;
     }
 
-    public int calculateRoi (User user, LendingRate lendingRate) {
+    public Result calculateRoi (User user, LendingRate lendingRate, Result result) {
         String userAttribute2 = user.getUserAttribute2();
         int userRiskAttribute2 = user.getUserRiskAttribute2();
 
@@ -50,7 +54,9 @@ public class Calculate {
         int j = ArrayUtil.getBucketIndexOfValue(lendingRate.getUserRiskAttribute2(), userRiskAttribute2);
 
         int roi = lendingRate.getValues()[i][j];
-        return roi;
+
+        result.setRoi((float) roi);
+        return result;
     }
 
     /**
